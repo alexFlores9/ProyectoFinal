@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validarUsuario("http://192.168.43.105/service2020/validar_usuario.php");
+                validarUsuario("https://animelistosk3.000webhostapp.com/proyecto_final/validar_usuario.php");
             }
         });
 
