@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".productos.Productos">
+    tools:context=".productos.EditarProducto">
 
-    <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -194,6 +193,29 @@
                 android:text="yyyy-MM-dd HH:mm:ss"
                 />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_fecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawablePadding="5dp"
+                    android:paddingLeft="1dp"
+                    android:drawableStart="@drawable/ic_menu_camera"
+                    android:ems="10"
+                    android:hint="* fecha"
+                    android:inputType="text"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_menu_camera" />
+            </com.google.android.material.textfield.TextInputLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -203,12 +225,12 @@
                 android:layout_marginRight="20dp"
                 android:background="#000">
                 <Button
-                    android:id="@+id/btnSave"
+                    android:id="@+id/btneditar"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Guardar"
+                    android:text="Editar"
                     android:textColor="#000"
                     android:background="#fff"
                     />
@@ -217,12 +239,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
                 <Button
-                    android:id="@+id/btnNew"
+                    android:id="@+id/btneliminar"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nuevo Producto"
+                    android:text="Eliminar"
                     android:textColor="#000"
                     android:background="#fff"
                     />

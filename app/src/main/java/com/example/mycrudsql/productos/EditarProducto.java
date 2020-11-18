@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -37,16 +36,15 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 
-public class Productos extends Fragment {
+public class EditarProducto extends Fragment {
+
 
     private TextInputLayout ti_id, ti_nombre_prod, ti_descripcion, ti_stock,
             ti_precio, ti_unidadmedida;
     private EditText et_id, et_nombre_prod, et_descripcion, et_stock,
-            et_precio, et_unidadmedida;
+            et_precio, et_unidadmedida, et_fecha;
     private Spinner sp_estadoProductos, sp_fk_categoria;
     private TextView tv_fechahora;
     private Button btnSave, btnNew;
@@ -69,7 +67,6 @@ public class Productos extends Fragment {
     String datoStatusProduct = "";
 
     dto_productos dto = new dto_productos();
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -86,11 +83,27 @@ public class Productos extends Fragment {
         et_precio = view.findViewById(R.id.et_precio);
         et_unidadmedida = view.findViewById(R.id.et_unidadmedida);
         sp_estadoProductos = view.findViewById(R.id.sp_estadoProductos);
+et_fecha=view.findViewById(R.id.et_fecha);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(),
+                R.array.estadoCategorias, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_estadoProductos.setAdapter(adapter1);
+
         sp_fk_categoria = view.findViewById(R.id.sp_fk_categoria);
         tv_fechahora = view.findViewById(R.id.tv_fechahora);
         tv_fechahora.setText(timedate());
         btnSave = view.findViewById(R.id.btnSave);
         btnNew = view.findViewById(R.id.btnNew);
+
+        et_id.setText(getArguments().getString("id_p"));
+        et_nombre_prod.setText(getArguments().getString("nom_p"));
+        et_descripcion.setText(getArguments().getString("des_p"));
+        et_stock.setText(getArguments().getString("st_p"));
+        et_precio.setText(getArguments().getString("pre_p"));
+        et_unidadmedida.setText(getArguments().getString("uni_p"));
+        sp_estadoProductos.setSelection(adapter1.getPosition(getArguments().getString("est_p")));
+
+        et_fecha.setText(getArguments().getString("fecha"));
 
         sp_estadoProductos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -136,48 +149,12 @@ public class Productos extends Fragment {
             }
         });
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                String id = et_id.getText().toString();
-                String nombre = et_nombre_prod.getText().toString();
-                String descripcion = et_descripcion.getText().toString();
-                String stock = et_stock.getText().toString();
-                String precio = et_precio.getText().toString();
-                String unidad = et_unidadmedida.getText().toString();
-                if(id.length() == 0){
-                    et_id.setError("Campo obligatorio.");
-                }else if(nombre.length() == 0){
-                    et_nombre_prod.setError("Campo obligatorio.");
-                }else if(descripcion.length() == 0){
-                    et_descripcion.setError("Campo obligatorio.");
-                }else if(stock.length() == 0){
-                    et_stock.setError("Campo obligatorio.");
-                }else if(precio.length() == 0){
-                    et_precio.setError("Campo obligatorio.");
-                }else if(unidad.length() == 0){
-                    et_unidadmedida.setError("Campo obligatorio.");
-                }else if(sp_estadoProductos.getSelectedItemPosition() == 0){
-                    Toast.makeText(getContext(), "Debe seleccionar el estado del producto.", Toast.LENGTH_SHORT).show();
-                }else if(sp_fk_categoria.getSelectedItemPosition() > 0){
-                    Toast.makeText(getContext(), "Good...", Toast.LENGTH_SHORT).show();
-                    save_productos(getContext(), id, nombre, descripcion,
-                            stock, precio, unidad, datoStatusProduct, idcategoria);
-                }else{
-                    Toast.makeText(getContext(), "Debe seleccionar la categoria.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
-        btnNew.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new_product();
-            }
-        });
+
         return view;
     }
+
 
     private String timedate(){
         Calendar cal = Calendar.getInstance();
@@ -200,7 +177,7 @@ public class Productos extends Fragment {
                     int totalEncontrados = array.length();
                     // Toast.makeText(context, "Total:"+totalEncontrados, Toast.LENGTH_SHORT).show();
 
-                   dto_categorias obj_categorias = null;
+                    dto_categorias obj_categorias = null;
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject categoriasObject = array.getJSONObject(i);
@@ -234,82 +211,4 @@ public class Productos extends Fragment {
         });
         MySingleton.getInstance(context).addToRequestQueue(stringRequest);
     }
-
-    private void save_productos(final Context context,
-                                final String id_prod,
-                                final String nom_prod,
-                                final String des_prod,
-                                final String stock,
-                                final String precio,
-                                final String uni_medida,
-                                final String estado_prod,
-                                final String categoria
-    ){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                Setting_VAR.URL_registrar_productos, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-
-                JSONObject requestJSON = null;
-
-                try {
-                    requestJSON = new JSONObject(response.toString());
-                    String estado = requestJSON.getString("estado");
-                    String mensaje = requestJSON.getString("mensaje");
-                    if(estado.equals("1")){
-                        Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
-                    }else if(estado.equals("2")){
-                        Toast.makeText(context, ""+mensaje, Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(context, "No se puedo guardar. \n" +
-                        "Intentelo más tarde.", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            protected Map<String, String> getParams() throws AuthFailureError
-            {
-                Map<String, String> map = new HashMap<>();
-                map.put("Content-Type", "application/json; charset=utf-8");
-                map.put("Accept", "application/json");
-                map.put("id_prod", id_prod);
-                map.put("nom_prod", nom_prod);
-                map.put("des_prod", des_prod);
-                map.put("stock", stock);
-                map.put("precio", precio);
-                map.put("uni_medida", uni_medida);
-                map.put("estado_prod", estado_prod);
-                map.put("categoria", categoria);
-                return map;
-            }
-        };
-        MySingleton.getInstance(context).addToRequestQueue(stringRequest);
-    }
-
-    private void new_product() {
-        et_id.setText(null);
-        et_nombre_prod.setText(null);
-        et_descripcion.setText(null);
-        et_stock.setText(null);
-        et_precio.setText(null);
-        et_unidadmedida.setText(null);
-        sp_estadoProductos.setSelection(0);
-        sp_fk_categoria.setSelection(0);
-    }
-
-    public ArrayList<String> obtenerListaCategorias() {
-        //ArrayList<String> lista = new ArrayList<String>();
-        lista = new ArrayList<String>();
-        lista.add("Seleccione Categoria");
-        for(int i=0;i<=listaCategorias.size();i++){
-            lista.add(listaCategorias.get(i).getId_categoria()+" ~ "+listaCategorias.get(i).getNom_categoria());
-        }
-        return lista;
-    }
-
 }

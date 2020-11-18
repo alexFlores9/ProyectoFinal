@@ -20,5 +20,21 @@
             android:title="usuarios" />
 
 
+
+        <item
+            android:id="@+id/editarCategoria"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="editar cat" />
+
+        <item
+            android:id="@+id/nav_mostrarCategorias"
+            android:title="lista cat" />
+
+
+
+        <item
+            android:id="@+id/listProd"
+            android:title="list prod
+" />
     </group>
 </menu>

@@ -1,11 +1,7 @@
 package com.example.mycrudsql.usuarios;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +12,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.mycrudsql.Login;
-import com.example.mycrudsql.MainActivity;
 import com.example.mycrudsql.MySingleton;
 import com.example.mycrudsql.R;
 import com.example.mycrudsql.Setting_VAR;

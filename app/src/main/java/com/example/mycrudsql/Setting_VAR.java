@@ -2,8 +2,12 @@ package com.example.mycrudsql;
 
 public class Setting_VAR {
 
-   public static final String URL_guardar_categoria = "https://animelistosk3.000webhostapp.com/proyecto_final/guardar_categorias.php";
-   public static final String URL_consultaAllCategorias = "https://animelistosk3.000webhostapp.com/proyecto_final/buscar_Categorias.php";
-   public static final String URL_registrar_productos = "https://animelistosk3.000webhostapp.com/proyecto_final/guardar_productos.php";
-   public static final String URL_guardar_usuario = "https://animelistosk3.000webhostapp.com/proyecto_final/guardar_usuario.php";
+   public static final String URL_guardar_categoria = "http://192.168.43.245/service2020/guardar_categorias.php";
+   public static final String URL_consultaAllCategorias = "http://192.168.43.245/service2020/buscar_Categorias.php";
+   public static final String URL_consultaAllPro = "http://192.168.43.245/service2020/listProd.php";
+   public static final String URL_registrar_productos = "http://192.168.43.245/service2020/guardar_productos.php";
+   public static final String URL_guardar_usuario = "http://192.168.43.245/service2020/guardar_usuario.php";
+
+   public static final String URL_Editar_Categoria= "http://192.168.43.245/service2020/EditarCategoria.php";
+   public static final String URL_Eliminar_Categoria="http://192.168.43.245/service2020/EliminarCategoria.php";
 }
