@@ -1,5 +1,9 @@
 package com.example.mycrudsql;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -10,10 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -39,13 +39,13 @@ public class Login extends AppCompatActivity {
             new android.app.AlertDialog.Builder(this)
                     .setIcon(R.drawable.ic_aviso)
                     .setTitle("Warning")
-                    .setMessage("Realmente desea salir?")
+                    .setMessage("Realmente de logindesea salir?")
                     .setNegativeButton(android.R.string.cancel,null)
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            finishAffinity();
+                            finish();
                         }
                     })
                     .show();
@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validarUsuario("http://192.168.43.245/service2020/validar_usuario.php");
+                validarUsuario("http://192.168.43.105/service2020/validar_usuario.php");
             }
         });
 

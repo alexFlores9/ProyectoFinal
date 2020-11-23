@@ -1,7 +1,23 @@
 package com.example.mycrudsql.categorias;
 
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.mycrudsql.R;
+
+
+
 import android.content.Context;
 import android.os.Bundle;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,25 +27,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import androidx.fragment.app.Fragment;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.mycrudsql.MySingleton;
-import com.example.mycrudsql.R;
 import com.example.mycrudsql.Setting_VAR;
 import com.google.android.material.textfield.TextInputLayout;
+import com.example.mycrudsql.MySingleton;
 
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
+import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 public class Categorias extends Fragment  implements View.OnClickListener {
     private TextInputLayout ti_idcategoria, ti_namecategoria;

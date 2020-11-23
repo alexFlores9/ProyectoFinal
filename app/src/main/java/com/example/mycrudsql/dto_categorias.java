@@ -1,5 +1,9 @@
 package com.example.mycrudsql;
 
+import android.content.Context;
+
+import java.util.List;
+
 public class dto_categorias {
     int id_categoria;
     String nom_categoria;

@@ -60,11 +60,7 @@
         android:name="com.example.mycrudsql.productos.MostrarProductos"
         android:label="fragment_mostrar_productos"
         tools:layout="@layout/fragment_mostrar_productos" />
-    <activity
-        android:id="@+id/listProd"
-        android:name="com.example.mycrudsql.ListProd"
-        android:label="activity_list_prod"
-        tools:layout="@layout/activity_list_prod" />
+
     <fragment
         android:id="@+id/nav_editarProducto"
         android:name="com.example.mycrudsql.productos.EditarProducto"

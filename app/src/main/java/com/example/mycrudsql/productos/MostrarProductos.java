@@ -1,29 +1,24 @@
 package com.example.mycrudsql.productos;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mycrudsql.Adapter3;
-import com.example.mycrudsql.ListProd;
 import com.example.mycrudsql.R;
 import com.example.mycrudsql.Setting_VAR;
 import com.example.mycrudsql.dto_productos;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +75,7 @@ public class MostrarProductos extends Fragment {
                             e.printStackTrace();
                         }
 
-                        Adapter3 adapter3 = new Adapter3((ListProd) getContext(), ProductoLista );
+                        Adapter3 adapter3 = new Adapter3(getContext(), ProductoLista );
                         listaR.setAdapter(adapter3);
                     }
                 }, new Response.ErrorListener() {

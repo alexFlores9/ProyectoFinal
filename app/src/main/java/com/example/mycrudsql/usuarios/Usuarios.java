@@ -1,7 +1,12 @@
 package com.example.mycrudsql.usuarios;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +17,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.mycrudsql.Login;
+import com.example.mycrudsql.MainActivity;
 import com.example.mycrudsql.MySingleton;
 import com.example.mycrudsql.R;
 import com.example.mycrudsql.Setting_VAR;
@@ -39,6 +44,8 @@ public class Usuarios extends Fragment  implements View.OnClickListener{
     String datoSelect = "";
     String datoSelectt = "";
     String datoSelectp = "";
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -223,6 +230,8 @@ Toast.LENGTH_SHORT);
                     //Acciones para guardar registro en la base de datos.
                     Toast.makeText(getContext(), "Bien...", Toast.LENGTH_SHORT).show();
                     save_server(getContext(), Integer.parseInt(id), nombre,apellido,correo,usuario,clave,Integer.parseInt(datoSelectt),Integer.parseInt(datoSelect),(datoSelectp),respuesta);
+
+
 
 
 

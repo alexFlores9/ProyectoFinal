@@ -8,10 +8,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_id"
                 android:layout_width="match_parent"
@@ -20,6 +22,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_id"
                     android:layout_width="match_parent"
@@ -35,6 +38,7 @@
                     android:textSize="14dp"
                     android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_nombre_prod"
                 android:layout_width="match_parent"
@@ -43,6 +47,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_nombre_prod"
                     android:layout_width="match_parent"
@@ -58,6 +63,7 @@
                     android:textSize="14dp"
                     android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_descripcion"
                 android:layout_width="match_parent"
@@ -66,6 +72,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_descripcion"
                     android:layout_width="match_parent"
@@ -82,6 +89,7 @@
                     android:inputType="text"
                     android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_stock"
                 android:layout_width="match_parent"
@@ -90,6 +98,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_stock"
                     android:layout_width="match_parent"
@@ -105,6 +114,7 @@
                     android:textSize="14dp"
                     android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_precio"
                 android:layout_width="match_parent"
@@ -113,6 +123,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_precio"
                     android:layout_width="match_parent"
@@ -128,6 +139,7 @@
                     android:textSize="14dp"
                     android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_unidadmedida"
                 android:layout_width="match_parent"
@@ -136,6 +148,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_unidadmedida"
                     android:layout_width="match_parent"
@@ -151,6 +164,7 @@
                     android:textSize="14dp"
                     android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Spinner
                 android:id="@+id/sp_estadoProductos"
                 android:layout_width="match_parent"
@@ -166,7 +180,7 @@
                 android:background="#fff"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 />
-            <!-- android:entries="@array/estadoCategorias"-->
+
             <Spinner
                 android:id="@+id/sp_fk_categoria"
                 android:layout_width="match_parent"
@@ -179,10 +193,9 @@
                 android:textColorHint="#000"
                 android:spinnerMode="dropdown"
                 android:entries="@array/sp_fk"
-
                 android:background="#fff"
-                style="@style/Widget.AppCompat.DropDownItem.Spinner"
-                />
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"/>
+
             <TextView
                 android:id="@+id/tv_fechahora"
                 android:layout_width="match_parent"
@@ -190,8 +203,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                android:text="yyyy-MM-dd HH:mm:ss"
-                />
+                android:text="yyyy-MM-dd HH:mm:ss"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_f"
@@ -201,6 +213,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_fecha"
                     android:layout_width="match_parent"
@@ -216,6 +229,7 @@
                     android:textSize="14dp"
                     android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -224,6 +238,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:background="#000">
+
                 <Button
                     android:id="@+id/btneditar"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
@@ -232,12 +247,13 @@
                     android:layout_weight="1"
                     android:text="Editar"
                     android:textColor="#000"
-                    android:background="#fff"
-                    />
+                    android:background="#fff"/>
+
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
+
                 <Button
                     android:id="@+id/btneliminar"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
@@ -246,14 +262,15 @@
                     android:layout_weight="1"
                     android:text="Eliminar"
                     android:textColor="#000"
-                    android:background="#fff"
-                    />
+                    android:background="#fff"/>
             </LinearLayout>
+
             <Space
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                />
+                android:layout_height="30dp"/>
+
         </LinearLayout>
+
     </ScrollView>
 
 </FrameLayout>
