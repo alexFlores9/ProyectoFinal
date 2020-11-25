@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/649316704/MYCRUDSQL.iml" filepath="$PROJECT_DIR$/.idea/modules/649316704/MYCRUDSQL.iml" group="MYCRUDSQL" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MYCRUDSQL-app.iml" filepath="$PROJECT_DIR$/.idea/modules/MYCRUDSQL-app.iml" group="MYCRUDSQL/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/649316704/ProyectoFinal-MYCRUDSQL.iml" filepath="$PROJECT_DIR$/.idea/modules/649316704/ProyectoFinal-MYCRUDSQL.iml" group="MYCRUDSQL" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="MYCRUDSQL/app" />
     </modules>
   </component>

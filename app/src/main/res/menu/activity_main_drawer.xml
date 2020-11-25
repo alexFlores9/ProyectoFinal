@@ -36,6 +36,9 @@
             android:id="@+id/nav_mostrarProductos"
             android:icon="@drawable/ic_view"
             android:title="Ver productos" />
-
+        <item
+            android:id="@+id/nav_mostrarUsuarios"
+            android:icon="@drawable/ic_user"
+            android:title="Mostrar usuarios" />
     </group>
 </menu>

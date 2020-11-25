@@ -12,4 +12,10 @@
         android:orderInCategory="100"
         android:title="usuario"
         app:showAsAction="never" />
+<item
+    android:id="@+id/mostrarUsuarios"
+    android:orderInCategory="101"
+    android:title="listar Usuarios"
+    app:showAsAction="never"
+    />
 </menu>

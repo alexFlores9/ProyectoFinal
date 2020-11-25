@@ -98,7 +98,7 @@ public class Adapter3 extends  RecyclerView.Adapter<Adapter3.ProViewHolder> {
 
                     Bundle bb = new Bundle();
 
-                   bb.putString("id", id);
+                    bb.putString("id", id);
                     bb.putString("nombre", nombre);
                     bb.putString("descripcion", descripcion);
                     bb.putString("estado", estado);
@@ -112,7 +112,6 @@ public class Adapter3 extends  RecyclerView.Adapter<Adapter3.ProViewHolder> {
                 }
             });
         }
-
 
     }
 }
