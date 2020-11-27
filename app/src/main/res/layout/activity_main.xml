@@ -8,9 +8,6 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="BIENVENIDO AL SISTEMA"
+            android:text="BIENVENID@"
             android:textSize="36sp"
             android:textStyle="bold" />
 

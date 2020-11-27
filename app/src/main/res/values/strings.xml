@@ -39,10 +39,10 @@
 
     <string-array name="preg">
         <item>Seleccione una pregunta</item>
-        <item>Color favorito?</item>
-        <item>Nombre primera mascota?</item>
-        <item>Nombre de tu abuela?</item>
-        <item>Año de necimiento?</item>
+        <item>¿Tu color favorito?</item>
+        <item>Nombre de tu primera mascota</item>
+        <item>Nombre de tu abuela</item>
+        <item>Año de necimiento</item>
     </string-array>
 
     <string-array name="sp_fk">

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/x"
     tools:context=".usuarios.EditarUsuario">
 
     <ScrollView
@@ -287,14 +288,6 @@
                     android:background="#BC6C6C6C"
                     />
             </LinearLayout>
-
-
-
-
         </LinearLayout>
-
-
     </ScrollView>
-
-
 </FrameLayout>

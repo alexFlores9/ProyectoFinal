@@ -1,6 +1,7 @@
 package com.example.mycrudsql.categorias;
 
 import android.content.Context;
+import android.content.pm.LabeledIntent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,6 +51,7 @@ public class EditarCategoria extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View root =  inflater.inflate(R.layout.fragment_editar_categoria, container, false);
 
         ti_idcategoria = root.findViewById(R.id.ti_idcategoria);
