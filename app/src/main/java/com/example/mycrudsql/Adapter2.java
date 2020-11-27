@@ -85,19 +85,19 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.UsuViewHolder> {
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View vvv) {
+                public void onClick(View v) {
 
-                    String id = getTextView(vvv, R.id.textViewIdUsua).getText().toString();
-                    String nombre = getTextView(vvv, R.id.textViewNombreUsu).getText().toString();
-                    String apellidos = getTextView(vvv, R.id.textViewApellidos).getText().toString();
-                    String correo = getTextView(vvv, R.id.textViewCorreo).getText().toString();
-                    String usuario = getTextView(vvv, R.id.textViewUsuario).getText().toString();
-                    String clave = getTextView(vvv, R.id.textViewClave).getText().toString();
-                    String tipo = getTextView(vvv, R.id.textViewTipoUsu).getText().toString();
-                    String estado = getTextView(vvv, R.id.textViewEstadoUsu).getText().toString();
-                    String pregunta = getTextView(vvv, R.id.textViewPregunta).getText().toString();
-                    String respuesta = getTextView(vvv, R.id.textViewRespuesta).getText().toString();
-                    String fecha_registro = getTextView(vvv, R.id.textViewFechaUsu).getText().toString();
+                    String id = getTextView(v, R.id.textViewIdUsua).getText().toString();
+                    String nombre = getTextView(v, R.id.textViewNombreUsu).getText().toString();
+                    String apellidos = getTextView(v, R.id.textViewApellidos).getText().toString();
+                    String correo = getTextView(v, R.id.textViewCorreo).getText().toString();
+                    String usuario = getTextView(v, R.id.textViewUsuario).getText().toString();
+                    String clave = getTextView(v, R.id.textViewClave).getText().toString();
+                    String tipo = getTextView(v, R.id.textViewTipoUsu).getText().toString();
+                    String estado = getTextView(v, R.id.textViewEstadoUsu).getText().toString();
+                    String pregunta = getTextView(v, R.id.textViewPregunta).getText().toString();
+                    String respuesta = getTextView(v, R.id.textViewRespuesta).getText().toString();
+                    String fecha_registro = getTextView(v, R.id.textViewFechaUsu).getText().toString();
 
                     Bundle aa = new Bundle();
 
@@ -113,7 +113,7 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.UsuViewHolder> {
                     aa.putString("respuesta", respuesta);
                     aa.putString("fecha_registro", fecha_registro);
 
-                   Navigation.findNavController(vvv).navigate(R.id.nav_editarUsuario, aa);
+                   Navigation.findNavController(v).navigate(R.id.nav_editarUsuario, aa);
                 }
             });
         }

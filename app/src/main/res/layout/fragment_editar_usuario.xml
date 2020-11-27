@@ -229,7 +229,29 @@
                     android:drawableLeft="@drawable/ic_res" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_fecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_res"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Respuesta"
+                    android:inputType="text"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_res" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

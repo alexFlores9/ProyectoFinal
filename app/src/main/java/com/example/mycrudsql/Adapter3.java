@@ -101,6 +101,7 @@ public class Adapter3 extends  RecyclerView.Adapter<Adapter3.ProViewHolder> {
                     bb.putString("id", id);
                     bb.putString("nombre", nombre);
                     bb.putString("descripcion", descripcion);
+                    bb.putString("stock", stock);
                     bb.putString("estado", estado);
                     bb.putString("precio", precio);
                     bb.putString("unidad", unidad);
